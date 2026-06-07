@@ -18,15 +18,15 @@ import track9 from '../assets/audio/thank you.m4a'
 
 
 const tracks = [
-{ title: '❧ you still', src: track9, disabled: false },
+{ title: '❧ you still', src: track9, disabled: true },
   { title: 'Never Mind', src: track1 },
   { title: 'The Way I Be + _', src: track2 },
-  { title: 'In Flames', src: track3, disabled: false },
-  { title: '916 interlude', src: track4, disabled: false },
-  { title: 'Cruel Half', src: track5, disabled: false },
-  { title: 'Are you down!?', src: track6, disabled: false },
-  { title: 'f4ur', src: track7, disabled: false },
-  { title: 'Oasis 101', src: track8, disabled: false },
+  { title: 'In Flames', src: track3, disabled: true },
+  { title: '916 interlude', src: track4, disabled: true },
+  { title: 'Cruel Half', src: track5, disabled: true },
+  { title: 'Are you down!?', src: track6, disabled: true },
+  { title: 'f4ur', src: track7, disabled: true },
+  { title: 'Oasis 101', src: track8, disabled: true },
 
 ]
 
