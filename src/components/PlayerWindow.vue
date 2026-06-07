@@ -6,15 +6,15 @@ import  coverArt2 from '../assets/oasis_cover3.4.jpg'
 const count = ref(0)
 
 // Import your audio files
-import track1 from '../assets/audio/lostV4.wav'
-import track2 from '../assets/audio/The Way I do + _.wav'
-import track3 from '../assets/audio/sxetch.wav'
-import track4 from '../assets/audio/916.wav'
-import track5 from '../assets/audio/cruel_half_mix5.4.wav'
-import track6 from '../assets/audio/areyou.wav'
-import track7 from '../assets/audio/down4.wav'
-import track8 from '../assets/audio/oasis 101.wav'
-import track9 from '../assets/audio/thank you.wav'
+import track1 from '../assets/audio/lostV4.m4a'
+import track2 from '../assets/audio/The Way I do + _.m4a'
+import track3 from '../assets/audio/sxetch.m4a'
+import track4 from '../assets/audio/916.m4a'
+import track5 from '../assets/audio/cruel_half_mix5.4.m4a'
+import track6 from '../assets/audio/areyou.m4a'
+import track7 from '../assets/audio/down4.m4a'
+import track8 from '../assets/audio/oasis 101.m4a'
+import track9 from '../assets/audio/thank you.m4a'
 
 
 const tracks = [

@@ -1,7 +1,7 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import Player from './components/PlayerWindow.vue/index.js'
 </script>
 
 <template>
-  <HelloWorld />
+  <Player />
 </template>
