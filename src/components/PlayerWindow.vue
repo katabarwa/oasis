@@ -18,6 +18,7 @@ import track9 from '../assets/audio/thank you.m4a'
 
 
 const tracks = [
+{ title: '❧ you still', src: track9, disabled: false },
   { title: 'Never Mind', src: track1 },
   { title: 'The Way I Be + _', src: track2 },
   { title: 'In Flames', src: track3, disabled: false },
@@ -26,7 +27,7 @@ const tracks = [
   { title: 'Are you down!?', src: track6, disabled: false },
   { title: 'f4ur', src: track7, disabled: false },
   { title: 'Oasis 101', src: track8, disabled: false },
-  { title: '❧ you still', src: track9, disabled: false },
+
 ]
 
 const currentTrack = ref(null)
