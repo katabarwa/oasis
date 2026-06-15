@@ -7,7 +7,7 @@ const count = ref(0)
 
 // Import your audio files
 
-import track1 from '../assets/audio/lostV4.m4a'
+import track1 from '../assets/audio/neverMind.m4a'
 import track2 from '../assets/audio/The Way I do + _.m4a'
 import track3 from '../assets/audio/sxetch.m4a'
 import track4 from '../assets/audio/916.m4a'
@@ -19,6 +19,7 @@ import track9 from '../assets/audio/thank you.m4a'
 import track10 from '../assets/audio/feelYou.m4a'
 import track11 from '../assets/audio/onSilent.m4a'
 import track12 from '../assets/audio/babii.m4a'
+import track13 from '../assets/audio/SyrenMars.m4a'
 
 
 const tracks = [
@@ -31,7 +32,8 @@ const tracks = [
 { title: 'In Flames', src: track3, disabled: true },
   { title: 'Cruel Half', src: track5, disabled: true },
   { title: 'f4r u', src: track7, disabled: true },
-  { title: 'Never Mind', src: track1 },
+  { title: 'Never Mind', src: track1, disabled: false },
+  { title: 'Syren Mars', src: track13, disabled: true },
   { title: 'Oasis 101', src: track8, disabled: true },
   { title: 'babii', src: track12, disabled: true },
 
