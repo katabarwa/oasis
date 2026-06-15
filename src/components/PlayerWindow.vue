@@ -25,17 +25,17 @@ import track13 from '../assets/audio/SyrenMars.m4a'
 const tracks = [
 { title: '❧ you still', src: track9, disabled: false },
 { title: '916 interlude', src: track4, disabled: false },
-{ title: 'Are you alive!?', src: track6, disabled: true },
+{ title: 'Are you alive!?', src: track6, disabled: false },
 { title: 'Feel You', src: track10, disabled: false },
 { title: 'On Silent', src: track11, disabled: false  },
 { title: 'The Way I Be + _', src: track2 , disabled: false},
-{ title: 'In Flames', src: track3, disabled: true },
-  { title: 'Cruel Half', src: track5, disabled: true },
-  { title: 'f4r u', src: track7, disabled: true },
+{ title: 'In Flames', src: track3, disabled: false },
+  { title: 'Cruel Half', src: track5, disabled: false },
+  { title: 'f4r u', src: track7, disabled: false },
   { title: 'Never Mind', src: track1, disabled: false },
-  { title: 'Syren Mars', src: track13, disabled: true },
-  { title: 'Oasis 101', src: track8, disabled: true },
-  { title: 'babii', src: track12, disabled: true },
+  { title: 'Syren Mars', src: track13, disabled: false },
+  { title: 'Oasis 101', src: track8, disabled: false },
+  { title: 'babii', src: track12, disabled: false },
 
 ]
 
