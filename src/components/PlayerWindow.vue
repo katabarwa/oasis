@@ -6,27 +6,34 @@ import  coverArt2 from '../assets/oasis_cover3.4.jpg'
 const count = ref(0)
 
 // Import your audio files
+
 import track1 from '../assets/audio/lostV4.m4a'
 import track2 from '../assets/audio/The Way I do + _.m4a'
 import track3 from '../assets/audio/sxetch.m4a'
 import track4 from '../assets/audio/916.m4a'
 import track5 from '../assets/audio/cruel_half_mix5.4.m4a'
-import track6 from '../assets/audio/areyou.m4a'
+import track6 from '../assets/audio/AREYOUALIVE_last.m4a'
 import track7 from '../assets/audio/down4.m4a'
 import track8 from '../assets/audio/oasis 101.m4a'
 import track9 from '../assets/audio/thank you.m4a'
+import track10 from '../assets/audio/feelYou.m4a'
+import track11 from '../assets/audio/onSilent.m4a'
+import track12 from '../assets/audio/babii.m4a'
 
 
 const tracks = [
-{ title: '❧ you still', src: track9, disabled: true },
+{ title: '❧ you still', src: track9, disabled: false },
+{ title: '916 interlude', src: track4, disabled: false },
+{ title: 'Are you alive!?', src: track6, disabled: false },
+{ title: 'Feel You', src: track10, disabled: false },
+{ title: 'On Silent', src: track11 },
+{ title: 'The Way I Be + _', src: track2 },
+{ title: 'In Flames', src: track3, disabled: false },
+  { title: 'Cruel Half', src: track5, disabled: false },
+  { title: 'f4r u', src: track7, disabled: false },
   { title: 'Never Mind', src: track1 },
-  { title: 'The Way I Be + _', src: track2 },
-  { title: 'In Flames', src: track3, disabled: true },
-  { title: '916 interlude', src: track4, disabled: true },
-  { title: 'Cruel Half', src: track5, disabled: true },
-  { title: 'Are you down!?', src: track6, disabled: true },
-  { title: 'f4ur', src: track7, disabled: true },
-  { title: 'Oasis 101', src: track8, disabled: true },
+  { title: 'Oasis 101', src: track8, disabled: false },
+  { title: 'babii', src: track12, disabled: false },
 
 ]
 
