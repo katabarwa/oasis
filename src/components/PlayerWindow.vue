@@ -70,7 +70,7 @@ function playNext() {
     </div>
     <div>
       <h1>Oasis</h1>
-      <p>by odyssey one</p>
+      <p>by ODC1</p>
     </div>
     <div class="tracklist">
       
