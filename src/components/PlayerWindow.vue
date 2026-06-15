@@ -24,16 +24,16 @@ import track12 from '../assets/audio/babii.m4a'
 const tracks = [
 { title: '❧ you still', src: track9, disabled: false },
 { title: '916 interlude', src: track4, disabled: false },
-{ title: 'Are you alive!?', src: track6, disabled: false },
+{ title: 'Are you alive!?', src: track6, disabled: true },
 { title: 'Feel You', src: track10, disabled: false },
-{ title: 'On Silent', src: track11 },
-{ title: 'The Way I Be + _', src: track2 },
-{ title: 'In Flames', src: track3, disabled: false },
-  { title: 'Cruel Half', src: track5, disabled: false },
-  { title: 'f4r u', src: track7, disabled: false },
+{ title: 'On Silent', src: track11, disabled: false  },
+{ title: 'The Way I Be + _', src: track2 , disabled: false},
+{ title: 'In Flames', src: track3, disabled: true },
+  { title: 'Cruel Half', src: track5, disabled: true },
+  { title: 'f4r u', src: track7, disabled: true },
   { title: 'Never Mind', src: track1 },
-  { title: 'Oasis 101', src: track8, disabled: false },
-  { title: 'babii', src: track12, disabled: false },
+  { title: 'Oasis 101', src: track8, disabled: true },
+  { title: 'babii', src: track12, disabled: true },
 
 ]
 
@@ -70,7 +70,7 @@ function playNext() {
     </div>
     <div>
       <h1>Oasis</h1>
-      <p>by ODC1</p>
+      <p>by Odyssey One</p>
     </div>
     <div class="tracklist">
       
