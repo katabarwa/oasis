@@ -25,8 +25,8 @@ import track12 from '../assets/audio/babii.m4a'
 import track13 from '../assets/audio/SyrenMars.m4a'
 
 const tracks = [
-{ title: 'babii', src: track12, disabled: false },
-  { title: '❧ you still', src: track9, disabled: false },
+{ title: 'bby', src: track12, disabled: false },
+  { title: '❧ y0u still', src: track9, disabled: false },
   { title: '916 interlude', src: track4, disabled: false },
   { title: 'Are you alive!?', src: track6, disabled: false },
   { title: 'Feel You', src: track10, disabled: false },
