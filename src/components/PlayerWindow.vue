@@ -25,7 +25,7 @@ import track12 from '../assets/audio/babii.m4a'
 import track13 from '../assets/audio/SyrenMars.m4a'
 
 const tracks = [
-{ title: 'bby', src: track12, disabled: false },
+
   { title: '❧ y0u still', src: track9, disabled: false },
   { title: '916 interlude', src: track4, disabled: false },
   { title: 'Are you alive!?', src: track6, disabled: false },
@@ -38,6 +38,7 @@ const tracks = [
   { title: 'Never Mind', src: track1, disabled: false },
   { title: 'Syren Mars', src: track13, disabled: false },
   { title: 'Oasis 101', src: track8, disabled: false },
+  { title: 'bby', src: track12, disabled: false },
 
 ]
 
@@ -117,7 +118,6 @@ function playNext() {
         :src="oasis101Video"
         class="base"
         preload="auto"
-        loop
         playsinline
       />
       <button
