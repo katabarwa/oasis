@@ -1,12 +1,15 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 // import  coverArt from '../assets/oasis_cover4.1.jpg'
 import  coverArt2 from '../assets/oasis_cover3.4.jpg'
 
 const count = ref(0)
 
-// Import your audio files
+const oasis101Video = 'https://pub-ad073cb475024372b387245e17bdfd68.r2.dev/oasis_5.mp4'
+const videoEl = ref(null)
+const needsTapForSound = ref(false)
 
+// Import your audio files
 import track1 from '../assets/audio/neverMind.m4a'
 import track2 from '../assets/audio/The Way I do + _.m4a'
 import track3 from '../assets/audio/sxetch.m4a'
@@ -21,40 +24,78 @@ import track11 from '../assets/audio/onSilent.m4a'
 import track12 from '../assets/audio/babii.m4a'
 import track13 from '../assets/audio/SyrenMars.m4a'
 
-
 const tracks = [
-{ title: '❧ you still', src: track9, disabled: false },
-{ title: '916 interlude', src: track4, disabled: false },
-{ title: 'Are you alive!?', src: track6, disabled: false },
-{ title: 'Feel You', src: track10, disabled: false },
-{ title: 'On Silent', src: track11, disabled: false  },
-{ title: 'The Way I Be + _', src: track2 , disabled: false},
-{ title: 'In Flames', src: track3, disabled: false },
+  { title: '❧ you still', src: track9, disabled: false },
+  { title: '916 interlude', src: track4, disabled: false },
+  { title: 'Are you alive!?', src: track6, disabled: false },
+  { title: 'Feel You', src: track10, disabled: false },
+  { title: 'On Silent', src: track11, disabled: false },
+  { title: 'The Way I Be + _', src: track2, disabled: false },
+  { title: 'In Flames', src: track3, disabled: false },
   { title: 'Cruel Half', src: track5, disabled: false },
   { title: 'f4r u', src: track7, disabled: false },
   { title: 'Never Mind', src: track1, disabled: false },
   { title: 'Syren Mars', src: track13, disabled: false },
   { title: 'Oasis 101', src: track8, disabled: false },
   { title: 'babii', src: track12, disabled: false },
-
 ]
 
 const currentTrack = ref(null)
 const audio = ref(null)
 
-function play(track) {
+const showVideo = computed(() => currentTrack.value?.title === 'Oasis 101')
+
+onMounted(() => {
+  videoEl.value?.load()
+})
+
+async function play(track) {
   if (track.disabled) return
+
   if (audio.value) {
     audio.value.pause()
   }
+  if (videoEl.value && !videoEl.value.paused) {
+    videoEl.value.pause()
+    videoEl.value.currentTime = 0
+  }
+  needsTapForSound.value = false
+
   if (currentTrack.value?.title === track.title) {
     currentTrack.value = null
     return
   }
+
   currentTrack.value = track
   audio.value = new Audio(track.src)
-  audio.value.play()
   audio.value.addEventListener('ended', playNext)
+
+  if (track.title === 'Oasis 101' && videoEl.value) {
+    audio.value.muted = true
+    audio.value.play().catch(() => {})
+
+    videoEl.value.currentTime = 0
+    videoEl.value.muted = false
+
+    try {
+      await videoEl.value.play()
+    } catch (err) {
+      // Safari blocked unmuted autoplay - play muted and ask for a tap to unmute
+      videoEl.value.muted = true
+      videoEl.value.play().catch(() => {})
+      needsTapForSound.value = true
+    }
+  } else {
+    audio.value.muted = false
+    audio.value.play().catch(() => {})
+  }
+}
+
+function enableSound() {
+  if (videoEl.value) {
+    videoEl.value.muted = false
+  }
+  needsTapForSound.value = false
 }
 
 function playNext() {
@@ -68,103 +109,63 @@ function playNext() {
 <template>
   <section id="center">
     <div class="hero">
-      <img :src="coverArt2" class="base" />
+      <img v-show="!showVideo" :src="coverArt2" class="base" />
+      <video
+        ref="videoEl"
+        v-show="showVideo"
+        :src="oasis101Video"
+        class="base"
+        preload="auto"
+        loop
+        playsinline
+      />
+      <button
+        v-if="showVideo && needsTapForSound"
+        class="sound-btn"
+        @click="enableSound"
+      >
+        🔇 tap for sound
+      </button>
     </div>
     <div>
       <h1>Oasis</h1>
-      <p>by Odyssey One</p>
+      <p id="credit">by Odyssey One</p>
     </div>
     <div class="tracklist">
-      
       <h2
         v-for="track in tracks"
         :key="track.title"
-       :class="{ active: currentTrack?.title === track.title, disabled: track.disabled }"
+        :class="{ active: currentTrack?.title === track.title, disabled: track.disabled }"
         @click="play(track)"
-      
       >
         <span class="dot">•</span>{{ track.title }}
       </h2>
-    
-  </div>
-    <!-- <button type="button" class="counter" @click="count++">
-       {{ count }} listeners
-    </button> -->
-
-  </section>
-
-  <!-- <div class="ticks"></div>
-
-  <section id="next-steps">
-    <div id="docs">
-      <svg class="icon" role="presentation" aria-hidden="true">
-        <use href="/icons.svg#documentation-icon"></use>
-      </svg>
-      <h2>Documentation</h2>
-      <p>Your questions, answered</p>
-      <ul>
-        <li>
-          <a href="https://vite.dev/" target="_blank">
-            <img class="logo" :src="viteLogo" alt="" />
-            Explore Vite
-          </a>
-        </li>
-        <li>
-          <a href="https://vuejs.org/" target="_blank">
-            <img class="button-icon" :src="vueLogo" alt="" />
-            Learn more
-          </a>
-        </li>
-      </ul>
-    </div>
-    <div id="social">
-      <svg class="icon" role="presentation" aria-hidden="true">
-        <use href="/icons.svg#social-icon"></use>
-      </svg>
-      <h2>Connect with us</h2>
-      <p>Join the Vite community</p>
-      <ul>
-        <li>
-          <a href="https://github.com/vitejs/vite" target="_blank">
-            <svg class="button-icon" role="presentation" aria-hidden="true">
-              <use href="/icons.svg#github-icon"></use>
-            </svg>
-            GitHub
-          </a>
-        </li>
-        <li>
-          <a href="https://chat.vite.dev/" target="_blank">
-            <svg class="button-icon" role="presentation" aria-hidden="true">
-              <use href="/icons.svg#discord-icon"></use>
-            </svg>
-            Discord
-          </a>
-        </li>
-        <li>
-          <a href="https://x.com/vite_js" target="_blank">
-            <svg class="button-icon" role="presentation" aria-hidden="true">
-              <use href="/icons.svg#x-icon"></use>
-            </svg>
-            X.com
-          </a>
-        </li>
-        <li>
-          <a href="https://bsky.app/profile/vite.dev" target="_blank">
-            <svg class="button-icon" role="presentation" aria-hidden="true">
-              <use href="/icons.svg#bluesky-icon"></use>
-            </svg>
-            Bluesky
-          </a>
-        </li>
-      </ul>
     </div>
   </section>
-
-  <div class="ticks"></div>
-  <section id="spacer"></section> -->
 </template>
 
 <style lang="css" scoped>
+#credit {
+  letter-spacing: -1px;
+}
+
+.hero {
+  position: relative;
+}
+
+.sound-btn {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
 .tracklist {
   display: flex;
   flex-direction: column;
@@ -180,7 +181,7 @@ function playNext() {
 .tracklist h2.disabled {
   opacity: 0.35;
   cursor: default;
-  font-size:16px ;
+  font-size: 16px;
 }
 
 .tracklist h2 .dot {
@@ -191,6 +192,6 @@ function playNext() {
   display: block;
   opacity: 1;
   font-size: 20px;
-  color: orangered!important;
+  color: orangered !important;
 }
 </style>
