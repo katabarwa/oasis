@@ -3,6 +3,8 @@ import { ref, computed, onMounted } from 'vue'
 // import  coverArt from '../assets/oasis_cover4.1.jpg'
 import  coverArt2 from '../assets/oasis_cover3.4.jpg'
 
+import { track as trackEvent } from '@vercel/analytics'
+
 const count = ref(0)
 
 const oasis101Video = 'https://pub-ad073cb475024372b387245e17bdfd68.r2.dev/oasis_5.mp4'
@@ -69,6 +71,8 @@ async function play(track) {
   }
 
   currentTrack.value = track
+  trackEvent('play_track', { trackName: track.title })  // ← analytics event
+
   audio.value = new Audio(track.src)
   audio.value.addEventListener('ended', playNext)
 
