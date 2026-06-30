@@ -39,7 +39,7 @@ const tracks = [
   { title: 'f4r u', src: track7, disabled: false },
   { title: 'Never Mind', src: track1, disabled: false },
   { title: 'Syren Mars', src: track13, disabled: false },
-  { title: 'Oasis 101', src: track8, disabled: false },
+  { title: 'Oasis 101', src: track8, disabled: true },
   { title: 'bby', src: track12, disabled: false },
 
 ]
