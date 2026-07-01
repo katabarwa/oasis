@@ -7,7 +7,7 @@ import { track as trackEvent } from '@vercel/analytics'
 
 const count = ref(0)
 
-const oasis101Video = 'https://pub-ad073cb475024372b387245e17bdfd68.r2.dev/oasis_5.mp4'
+const oasis101Video = 'https://pub-ad073cb475024372b387245e17bdfd68.r2.dev/oasis_101_.mp4'
 const videoEl = ref(null)
 const needsTapForSound = ref(false)
 
@@ -25,6 +25,7 @@ import track10 from '../assets/audio/feelYou_short_boost.m4a'
 import track11 from '../assets/audio/onSilent.m4a'
 import track12 from '../assets/audio/babii.m4a'
 import track13 from '../assets/audio/SyrenMars.m4a'
+import track14 from '../assets/audio/if_only.m4a'
 
 const tracks = [
 
@@ -39,8 +40,11 @@ const tracks = [
   { title: 'f4r u', src: track7, disabled: false },
   { title: 'Never Mind', src: track1, disabled: false },
   { title: 'Syren Mars', src: track13, disabled: false },
-  { title: 'Oasis 101', src: track8, disabled: true },
+  { title: 'idk', src: track14, disabled: false },
+ 
   { title: 'bby', src: track12, disabled: false },
+  { title: 'Oasis 101', src: track8, disabled: false },
+
 
 ]
 
