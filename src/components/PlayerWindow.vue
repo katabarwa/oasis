@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
-// import  coverArt from '../assets/oasis_cover4.1.jpg'
+import  coverArt from '../assets/oasis_cover4.1.jpg'
 import  coverArt2 from '../assets/oasis_cover3.4.jpg'
 
 import { track as trackEvent } from '@vercel/analytics'
@@ -30,20 +30,19 @@ import track14 from '../assets/audio/if_only.m4a'
 const tracks = [
 
   { title: '❧ y0u still', src: track9, disabled: false },
-  { title: 'Never Mind', src: track1, disabled: false },
   { title: '916 interlude', src: track4, disabled: false },
   { title: 'Are you alive!?', src: track6, disabled: false },
-  { title: 'Feel You', src: track10, disabled: true },
+  { title: 'Feel You', src: track10, disabled: false },
   { title: 'The Way I Be + _', src: track2, disabled: false },
   { title: 'On Silent', src: track11, disabled: false },
   { title: 'In Flames', src: track3, disabled: false },
   { title: 'Cruel Half', src: track5, disabled: false },
+  { title: 'Never Mind', src: track1, disabled: false },
   { title: 'f4r u', src: track7, disabled: false },
- 
   { title: 'Syren Mars', src: track13, disabled: false },
   { title: 'bby', src: track12, disabled: false },
-  { title: 'if only', src: track14, disabled: true },
-  { title: 'Oasis 101', src: track8, disabled: true },
+  { title: 'if only', src: track14, disabled: false },
+  { title: 'Oasis 101', src: track8, disabled: false },
 
 
 
@@ -137,6 +136,7 @@ function playNext() {
         🔇 tap for sound
       </button>
     </div>
+    <audio ref="audioEl" @ended="playNext" playsinline />
     <div>
       <h1>Oasis</h1>
       <p id="credit">by Odyssey One</p>
