@@ -31,6 +31,7 @@ const tracks = [
 
   { title: '❧ y0u still', src: track9, disabled: false },
   { title: '916 interlude', src: track4, disabled: false },
+  { title: 'Favour U&I', src: track9, disabled: true },
   { title: 'Are you alive!?', src: track6, disabled: false },
   { title: 'Feel You', src: track10, disabled: false },
   { title: 'The Way I Be + _', src: track2, disabled: false },
