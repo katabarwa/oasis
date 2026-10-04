@@ -141,7 +141,7 @@ function playNext() {
     <audio ref="audioEl" @ended="playNext" playsinline />
     <div>
       <h1>Oasis</h1>
-      <p id="credit">by Odyssey One</p>
+      <h3 id="credit">odyssey 0cean</h3>
     </div>
     <div class="tracklist">
       <h2
@@ -159,6 +159,7 @@ function playNext() {
 <style lang="css" scoped>
 #credit {
   letter-spacing: -1px;
+
 }
 
 .hero {
